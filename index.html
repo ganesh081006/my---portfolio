@@ -175,7 +175,7 @@
             const message = document.getElementById('message').value;
 
             try {
-                const response = await fetch('http://127.0.0.1:8000/contact', {
+                const response = await fetch('https://ganesh-api-q9ze.onrender.com/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, message })
@@ -192,7 +192,7 @@
         // --- 3. DATABASE: LOADING ---
         async function loadMessages() {
             try {
-                const response = await fetch('http://127.0.0.1:8000/messages');
+                const response = await fetch('https://ganesh-api-q9ze.onrender.commessages');
                 const messages = await response.json();
                 const list = document.getElementById('messageList');
                 list.innerHTML = '';
