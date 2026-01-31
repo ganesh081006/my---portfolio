@@ -65,8 +65,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "portfolio.db")
 
 def init_db():
-   conn = sqlite3.connect(db_path, check_same_thread=False)
-cursor = conn.cursor()
+    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
+    cursor = conn.cursor()
+    # Ensure the three dots below are perfectly aligned with 'cursor'
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS messages (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
