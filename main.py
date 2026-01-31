@@ -1,5 +1,18 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+import os
+import sqlite3
+from fastapi import FastAPI
+# ... other imports ...
+
+# ADD THESE LINES HERE:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "portfolio.db")
+
+# Now your function will work:
+def init_db():
+    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
+    # ... rest of your code ...
 
 app = FastAPI()
 
