@@ -58,9 +58,15 @@ app.add_middleware(
 )
 
 # 2. Database Setup: Create a table if it doesn't exist
+import os
+
+# Get the directory where main.py is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, "portfolio.db")
+
 def init_db():
-    conn = sqlite3.connect("portfolio.db")
-    cursor = conn.cursor()
+    conn = sqlite3.connect(db_path) # Use the full path
+    # ... rest of your code ...
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS messages (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
