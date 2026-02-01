@@ -4,164 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KONDURI GANESH VARMA | Portfolio</title>
-    
     <style>
         :root {
+            /* Apple-style color palette */
             --apple-bg: #f5f5f7;
-            --apple-card: rgba(255, 255, 255, 0.8);
+            --apple-card: rgba(255, 255, 255, 0.85);
             --apple-text: #1d1d1f;
+            --apple-secondary: #86868b;
             --apple-blue: #0071e3;
-            --glass-blur: blur(20px);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--apple-bg);
             color: var(--apple-text);
             margin: 0;
-            line-height: 1.5;
+            display: flex;
+            justify-content: center;
             -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            
+            /* Modern Mesh Gradient Background */
+            background-color: #f5f5f7;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 113, 227, 0.1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, rgba(94, 94, 94, 0.05) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, rgba(0, 113, 227, 0.1) 0, transparent 50%);
+            background-attachment: fixed;
         }
 
-        /* Apple-style Frosted Glass Card */
-        .container {
+        .portfolio-container {
             max-width: 800px;
-            margin: 50px auto;
-            padding: 40px;
+            width: 90%;
+            margin: 60px 0;
             background: var(--apple-card);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
+            padding: 40px;
             border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04); /* Suble Apple Shade */
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* Apple-style soft shadow */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            /* Frosted glass effect */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
-        .hero h1 { font-size: 48px; letter-spacing: -0.5px; margin-bottom: 10px; [cite_start]} [cite: 5, 9, 10]
-        .hero p { font-size: 21px; color: #86868b; [cite_start]} [cite: 11, 12]
+        /* Hero Section  */
+        .hero h1 { font-size: 42px; margin-bottom: 5px; letter-spacing: -1px; }
+        .hero .role { font-size: 21px; color: var(--apple-secondary); margin-bottom: 20px; }
 
-        .section-title { font-size: 28px; margin-top: 40px; border-bottom: 1px solid #d2d2d7; padding-bottom: 10px; [cite_start]} [cite: 13, 34, 45, 50]
-
-        /* Project & Skill Tags */
-        .tag {
+        h2 { font-size: 24px; margin-top: 40px; border-bottom: 1px solid #d2d2d7; padding-bottom: 10px; }
+        
+        /* Skills Tags [cite: 34, 35] */
+        .skill-tag {
             display: inline-block;
-            background: #e8e8ed;
+            background: rgba(232, 232, 237, 0.8);
             padding: 8px 16px;
             border-radius: 20px;
-            margin: 5px;
+            margin: 5px 5px 5px 0;
             font-size: 14px;
             font-weight: 500;
-        [cite_start]} [cite: 35, 36, 43, 44, 78]
+        }
 
+        /* Project Cards [cite: 13, 14] */
+        .project-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(210, 210, 215, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-link { color: var(--apple-blue); text-decoration: none; font-weight: 500; }
+
+        /* Form Styling [cite: 68] */
         input, textarea {
             width: 100%;
             padding: 15px;
             margin: 10px 0;
             border-radius: 12px;
             border: 1px solid #d2d2d7;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             font-size: 16px;
             box-sizing: border-box;
+            font-family: inherit;
         }
 
         button {
-            background-color: var(--apple-blue);
+            background: var(--apple-blue);
             color: white;
-            padding: 12px 24px;
             border: none;
-            border-radius: 20px;
+            padding: 14px 28px;
+            border-radius: 24px;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        button:hover { transform: scale(1.05); }
+        button:hover { opacity: 0.9; transform: scale(1.02); }
 
         .message-item {
-            background: #fff;
+            background: rgba(245, 245, 247, 0.7);
             padding: 15px;
-            border-radius: 15px;
-            margin-bottom: 10px;
-            border: 1px solid #f0f0f2;
+            border-radius: 14px;
+            margin-top: 12px;
+            border: 1px solid rgba(210, 210, 215, 0.3);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="portfolio-container">
     <header class="hero">
-        [cite_start]<h1>Hi, I'm KONDURI GANESH VARMA [cite: 5]</h1>
-        [cite_start]<p>B.Tech 2nd Year Student at SRMIST (AI Specialization) [cite: 6, 52, 54]</p>
-        [cite_start]<p>I build applications using HTML, CSS, JavaScript, and Python. [cite: 7, 12, 40, 49]</p>
+        <h1>Hi, I'm KONDURI GANESH VARMA</h1>
+        <p class="role">Aspiring Developer | B.Tech 2nd Year Student at SRMIST</p>
+        <p>I build beginner-friendly applications using HTML, CSS, JavaScript, and Python[cite: 12]. Currently seeking internship opportunities[cite: 73].</p>
     </header>
 
-    [cite_start]<h2 class="section-title">About Me [cite: 45]</h2>
-    [cite_start]<p>I am a computer science student with a strong interest in building real-world applications. [cite: 47, 48] [cite_start]Currently focusing on improving my full-stack skills. [cite: 49] Education: SRMIST | [cite_start]CGPA: 7.7 [cite: 53, 55]</p>
+    <section>
+        <h2>About Me</h2>
+        <p>I am a computer science student with a strong interest in building real-world applications[cite: 47, 48]. Currently improving my full-stack skills to understand how software functions in professional environments[cite: 48, 49].</p>
+    </section>
 
-    [cite_start]<h2 class="section-title">Skills [cite: 34]</h2>
-    <div>
-        [cite_start]<span class="tag">C / C++ / Java [cite: 37, 38]</span>
-        [cite_start]<span class="tag">Python / FastAPI [cite: 38, 41]</span>
-        [cite_start]<span class="tag">HTML5 / CSS3 / JS [cite: 39, 40]</span>
-        [cite_start]<span class="tag">Git & GitHub [cite: 43, 44]</span>
-    </div>
+    <section>
+        <h2>Education</h2>
+        <p><strong>Bachelor of Technology (B.Tech) - AI Specialization [cite: 52]</strong></p>
+        <p>SRMIST, Kattankulathur | 2024 - 2028 [cite: 53, 54]</p>
+        <p>CGPA: 7.7 / 10 [cite: 55]</p>
+    </section>
 
-    [cite_start]<h2 class="section-title">Projects [cite: 13, 76]</h2>
-    <div class="message-item">
-        [cite_start]<h3>Full-Stack Guestbook [cite: 15, 21]</h3>
-        [cite_start]<p>A web application with a FastAPI backend to track visitor messages. [cite: 16, 23] [cite_start]Tech: Python, SQLite, Render. [cite: 18, 26]</p>
-        [cite_start]<a href="https://github.com/ganesh081006/my---portfolio" style="color:var(--apple-blue);">GitHub Repo [cite: 20, 32, 72]</a>
-    </div>
+    <section>
+        <h2>Skills</h2>
+        <div>
+            <strong>Languages:</strong>
+            <span class="skill-tag">C</span> <span class="skill-tag">C++</span> 
+            <span class="skill-tag">Java</span> <span class="skill-tag">Python (Basics) [cite: 38]</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Web & Backend:</strong>
+            <span class="skill-tag">HTML</span> <span class="skill-tag">CSS</span> 
+            <span class="skill-tag">JavaScript</span> <span class="skill-tag">FastAPI</span>
+        </div>
+        <div style="margin-top: 10px;">
+            <strong>Tools:</strong>
+            <span class="skill-tag">Git & GitHub</span> <span class="skill-tag">VS Code [cite: 44]</span>
+        </div>
+    </section>
 
-    [cite_start]<h2 class="section-title">Guestbook [cite: 68]</h2>
-    <form id="messageForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <textarea id="content" placeholder="Leave a message..." rows="3" required></textarea>
-        <button type="submit">Post Message</button>
-    </form>
+    <section>
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Full-Stack Guestbook App [cite: 15]</h3>
+            <p>A web application to track daily visitor messages using a live database[cite: 23]. Built to understand CRUD operations and API integration[cite: 25].</p>
+            <p><strong>Tech Stack:</strong> Python, FastAPI, SQLite, Render [cite: 18, 26]</p>
+            <p>
+                <a class="project-link" href="https://github.com/ganesh081006/my---portfolio" target="_blank">GitHub [cite: 20]</a> | 
+                <a class="project-link" href="https://ganesh081006.github.io/my---portfolio/" target="_blank">Live Demo [cite: 20]</a>
+            </p>
+        </div>
+    </section>
 
-    <div id="messagesList" style="margin-top: 20px;">
-        <p>Loading messages...</p>
-    </div>
+    <section>
+        <h2>Get In Touch</h2>
+        <p>Email: ganesh@example.com [cite: 70]</p>
+        <p>LinkedIn: <a class="project-link" href="#" target="_blank">linkedin.com/in/ganeshvarma [cite: 71]</a></p>
+
+        <form id="messageForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <textarea id="content" placeholder="Leave a message in my guestbook..." rows="3" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div id="messagesList" style="margin-top: 20px;">
+            <h3>Guestbook Messages</h3>
+            <p>Loading messages from database...</p>
+        </div>
+    </section>
 </div>
 
 <script>
-    // Live Render API Link
     const API_URL = "https://ganesh-api-q9ze.onrender.com";
 
-    // Load messages from database
     async function loadMessages() {
         try {
             const res = await fetch(`${API_URL}/messages`);
             const data = await res.json();
             const list = document.getElementById('messagesList');
-            list.innerHTML = data.map(m => `
-                <div class="message-item">
-                    <strong>${m.name}</strong>
-                    <p style="margin: 5px 0 0 0; color: #424245;">${m.content}</p>
-                </div>
-            `).join('');
+            if (data.length === 0) {
+                list.innerHTML = "<h3>Guestbook Messages</h3><p>No messages yet. Be the first to say hi!</p>";
+            } else {
+                list.innerHTML = "<h3>Guestbook Messages</h3>" + data.map(m => `
+                    <div class="message-item">
+                        <strong>${m.name}</strong>
+                        <p style="margin: 5px 0 0 0; color: #424245;">${m.content}</p>
+                    </div>
+                `).join('');
+            }
         } catch (err) {
-            console.error("Failed to load messages:", err);
+            document.getElementById('messagesList').innerHTML = "<h3>Guestbook Messages</h3><p>Database connection offline.</p>";
         }
     }
 
-    // Handle Form Submit
     document.getElementById('messageForm').onsubmit = async (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value;
         const content = document.getElementById('content').value;
 
-        await fetch(`${API_URL}/contact`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, content })
-        });
-        
-        document.getElementById('messageForm').reset();
-        loadMessages(); // Refresh the list
+        try {
+            await fetch(`${API_URL}/contact`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, content })
+            });
+            document.getElementById('messageForm').reset();
+            loadMessages();
+        } catch (err) {
+            alert("Could not send message. Please check connection.");
+        }
     };
 
-    // Initial load
     loadMessages();
 </script>
 
