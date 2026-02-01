@@ -1,4 +1,28 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware # 1. Import this
+import sqlite3
+
+app = FastAPI()
+
+# 2. Add this block right after 'app = FastAPI()'
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # This allows your GitHub site to access the data
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Your existing database and route code goes below here...
+@app.get("/messages")
+def get_messages():
+    conn = sqlite3.connect("portfolio.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT name, content FROM messages")
+    messages = [{"name": row[0], "content": row[1]} for row in cursor.fetchall()]
+    conn.close()
+    return messages
+from fastapi import FastAPI
 from pydantic import BaseModel
 import os
 import sqlite3
